@@ -20,10 +20,7 @@ AC_ARG_ENABLE([nostrip],
 	[include -nostrip option during packaging]),
 	[NOSTRIP=-nostrip], [NOSTRIP=])
 
-AC_CONFIG_FILES(
-  [Makefile]
-  [debian/vyatta-ipv6-rtradv.postinst]
-  )
+AC_CONFIG_FILES([Makefile])
 
 AC_SUBST(NOSTRIP)
 
