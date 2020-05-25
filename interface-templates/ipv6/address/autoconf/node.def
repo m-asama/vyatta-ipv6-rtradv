@@ -8,12 +8,6 @@ update:
 	if [ -e /proc/sys/net/ipv6/conf/$IFNAME/autoconf ]; then
 	    echo "Enabling address auto-configuration for $IFNAME"
 	    sudo sh -c "echo 1 > /proc/sys/net/ipv6/conf/$IFNAME/autoconf"
-	    forwarding=`cat /proc/sys/net/ipv6/conf/$IFNAME/forwarding`
-	    if [ $forwarding = 1 ]; then
-		echo "Warning: IPv6 forwarding is currently enabled."
-		echo "         IPv6 address auto-configuration will not be performed"
-                echo "         unless IPv6 forwarding is disabled."
-	    fi
 	else
 	    echo "Address auto-configuration will be enabled when interface comes up."
 	fi
